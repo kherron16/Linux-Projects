@@ -1,0 +1,8 @@
+ASSIGNEMTN #1: MOTD
+
+Set the background of the prompt of the master to red, for all users --see profile.d/globalconf.sh
+Set the background of the prompt of the minion to green, for all users   --see profile.d/globalconf.sh
+Set the path for all users the path can be arbitrary.  --echo $PATH 
+Set the MOTD for all users  --see etc/motd    
+
+
