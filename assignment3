@@ -1,0 +1,9 @@
+APACHE/HTTPD
+
+1) Install/Start Apache
+2) Configure Apache to serve web content from all home directories
+3) Create "Hello World" page for 2 users
+4) Startup Apache at boot
+5) Configure Apache to run on port 8080
+6) Start Apache not as root, but as a different user.
+7) Start the HTTPD parent process as another user (not root) on port 80
