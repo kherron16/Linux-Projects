@@ -1,7 +1,10 @@
 Configure / Setup SSL / TLS
 
 1) Install/Enable SSL / TLS
+http://dev.antoinesolutions.com/openssl
+http://www.onlamp.com/pub/a/onlamp/2008/03/04/step-by-step-configuring-ssl-under-apache.html
 2) Enable SSL / TLS with a passphrase
+
 3) Disable the RC4 ciphers
 4) Find a command line utility that will enable you from your minion to connect to your master to verify the ciphers that you have disabled have actually been disabled 
 5) Create a certificate in D.E.R format and try to make it work. Then convert the certificate back to PEM
