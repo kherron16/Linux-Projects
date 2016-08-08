@@ -1,12 +1,29 @@
 Configure / Setup SSL / TLS
 
+https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-apache-for-centos-7
+
+CERT LOCATION:  /etc/pki/tls/certs/mycert.pem (created without key somehow?!)
+openssl req -new -x509 -days 10 -sha256 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
+
+SSL.conf file in httpd install: /etc/httpd/conf.d/ssl.conf
+
+
+
+
 1) Install/Enable SSL / TLS
 http://dev.antoinesolutions.com/openssl
 http://www.onlamp.com/pub/a/onlamp/2008/03/04/step-by-step-configuring-ssl-under-apache.html
 2) Enable SSL / TLS with a passphrase
 
 3) Disable the RC4 ciphers
+
 4) Find a command line utility that will enable you from your minion to connect to your master to verify the ciphers that you have disabled have actually been disabled 
-5) Create a certificate in D.E.R format and try to make it work. Then convert the certificate back to PEM
+openssl s_client -connect www.onekingslane.com:443
+openssl x509 -text -in cert.crt
+openssl x509 -text -in cert.crt:q
+
+
+5) Create a certificate in D.E.R format and try to make it work. Then convert the certificate back to PEM.
+
 6) Make it so the client browser trusts the certificate of the server 
 7) Create a pkcs12 bundle for someone else and distribute it to them
