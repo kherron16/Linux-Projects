@@ -7,21 +7,30 @@ openssl req -new -x509 -days 10 -sha256 -newkey rsa:2048 -keyout mycert.pem -out
 
 SSL.conf file in httpd install: /etc/httpd/conf.d/ssl.conf
 
-
+ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./test2.key -out ./test2.pem
 
 
 1) Install/Enable SSL / TLS
 http://dev.antoinesolutions.com/openssl
 http://www.onlamp.com/pub/a/onlamp/2008/03/04/step-by-step-configuring-ssl-under-apache.html
+
 2) Enable SSL / TLS with a passphrase
 
 3) Disable the RC4 ciphers
+openssl ciphers -v | grep RC4 (find your RC4 based ciphers)
+this gives the list available to apache and open ssl...ciphers could differ
 
 4) Find a command line utility that will enable you from your minion to connect to your master to verify the ciphers that you have disabled have actually been disabled 
 openssl s_client -connect www.onekingslane.com:443
 openssl x509 -text -in cert.crt
-openssl x509 -text -in cert.crt:q
 
+
+CONFIRM DISABLED (negtive test) openssl s_client -cipher RC4-MD5 -connect 192.   :443    force to use RC4-MD5, see the handshake fail
+
+CONFIRM WORKING INTENDED (positive test) GET / HTTP/1.0   ---can run if you have network connectivity to the host
+show http1 OK  get index page from document root for the server after connecting via open ssl
+
+-encrypted vs encoded w/ s_client 
 
 5) Create a certificate in D.E.R format and try to make it work. Then convert the certificate back to PEM.
 
