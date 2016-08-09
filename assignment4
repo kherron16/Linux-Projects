@@ -36,3 +36,17 @@ show http1 OK  get index page from document root for the server after connecting
 
 6) Make it so the client browser trusts the certificate of the server 
 7) Create a pkcs12 bundle for someone else and distribute it to them
+
+
+
+
+
+Install/Enable SSL / TLS
+Enable SSL / TLS with a passphrase
+Disable the RC4 ciphers
+Find a command line utility that will enable you from your minion to connect to your master to verify the ciphers that you have disabled have actually been disabled 
+Create a certificate in D.E.R format and try to make it work. Then convert the certificate back to PEM
+Once the certificate is back in PEM format take the certificate NOT The private key and install it into the certificate key store for your computer
+Then using safari visit the page for the web server and ensure that you DON'T get a certificate warning
+Create a pkcs12 bundle for someone else and distribute it to them
+Have them change their servername to match your certificate and ensure that you can start the server
