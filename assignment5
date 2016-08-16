@@ -1,0 +1,70 @@
+Configure/Setup mySQL:
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7
+
+
+#yum install wget
+
+#wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+#sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+#yum update
+
+1) Install and Start mySQL
+
+#sudo yum install mysql-server
+#systemctl start mysqld
+#mysql_secure_installation
+
+2)Configure mySQl to auto restart on boot
+
+#systemctl enable mysqld
+
+3) Create a User within mySQL
+login: mysql -u root -p
+
+ create user 'testuser'@'localhost' identified by 'password';
+ grant all on testdb.* to 'testuser' identified by 'password';
+
+4) Create a database
+
+ create database oesdb;
+ use oesdb;
+ 
+
+
+ 
+Figure out how to import the sql file data from: linux_projects.sql
+rsync
+mysql -u mark -p oesdb < /tmp/linux_projects.sql
+
+mysql> show tables;
++--------------------------+
+| Tables_in_oesdb          |
++--------------------------+
+| wp_commentmeta           |
+| wp_comments              |
+| wp_econtact_form_css     |
+| wp_econtact_form_entries |
+| wp_econtact_form_fields  |
+| wp_econtact_form_forms   |
+| wp_google_map            |
+| wp_links                 |
+| wp_options               |
+| wp_postmeta              |
+| wp_posts                 |
+| wp_term_relationships    |
+| wp_term_taxonomy         |
+| wp_terms                 |
+| wp_usermeta              |
+| wp_users                 |
++--------------------------+
+16 rows in set (0.00 sec)
+
+
+
+Configure DbViz or Sequel Pro to view the information in your Database remotely
+
+confirm running on 3306   :::  netstat -tln 
+
+Change the port of that mySQL is running on and restart the process.
+
+Confirm that you can still view your database remotely.
