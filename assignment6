@@ -1,0 +1,6 @@
+NAGIOS
+
+prereqs: LAMP Server
+
+(see bootstrap.sh)
+
