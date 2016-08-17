@@ -4,3 +4,12 @@ prereqs: LAMP Server
 
 (see bootstrap.sh)
 
+
+nagios plugin
+nrpe
+nagios core
+configure
+
+mysql and httpd process application checks
+
+
