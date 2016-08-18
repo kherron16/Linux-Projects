@@ -12,4 +12,16 @@ configure
 
 mysql and httpd process application checks
 
+https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-centos-7
 
+1) create users for nagios
+sudo useradd nagios
+
+2) get required package 
+
+sudo yum install gcc glibc glibc-common gd gd-devel make net-snmp openssl-devel xinetd unzip
+
+
+3) download nagios install
+curl -L -O https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.2.0.tar.gz
+unpack nagios install
