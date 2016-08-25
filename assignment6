@@ -25,3 +25,28 @@ sudo yum install gcc glibc glibc-common gd gd-devel make net-snmp openssl-devel 
 3) download nagios install
 curl -L -O https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.2.0.tar.gz
 unpack nagios install
+  tar xvf nagios-*.tar.gz
+   83  ls
+   84  cd nagios-4.2.0/
+   85  ls
+   86  ./configure --with-command-group=nagios
+   87  make all
+   88  usermod -G nagios apache
+   89  sudo make install
+   90  make install-commandmode
+   91  make install-config
+   92  make install-webconf
+   93  curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
+   94  tar xvf nagios-plugins-*.tar.gz
+   95  ls
+   96  cd nagios-plugins-2.1.2/
+   97  ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+   98  make
+   99  make install
+   
+   
+   INSTALL NRPE
+   get latest version
+   
+   curl -L -O http://downloads.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+   
